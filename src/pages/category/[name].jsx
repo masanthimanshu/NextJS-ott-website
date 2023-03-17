@@ -111,9 +111,7 @@ export async function getServerSideProps(context) {
     return { notFound: true };
   }
 
-  const res = await fetch(
-    `https://nextjs-ott.vercel.app/apis/category/${name}`
-  );
+  const res = await fetch(`https://nextjs-ott.vercel.app/api/category/${name}`);
   const data = await res.json();
 
   return { props: { data } };

@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat);
+@import url(./scrollbar.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+header {
+  margin-bottom: 6rem;
+}

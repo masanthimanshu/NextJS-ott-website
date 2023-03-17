@@ -1,0 +1,18 @@
+.search_bar {
+  border: 0;
+  width: 70%;
+  color: white;
+  padding: 1rem 0;
+  outline: inherit;
+  font-weight: bold;
+  text-indent: 1rem;
+  border-radius: 10px;
+  background-color: #252525;
+}
+
+.profile_btn {
+  display: flex;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+}

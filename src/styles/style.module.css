@@ -1,0 +1,15 @@
+.top_sec {
+  height: 35rem;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: color;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item {
+  transition: transform 250ms ease 50ms;
+}
+
+.item:hover {
+  transform: scale(1.25) !important;
+}

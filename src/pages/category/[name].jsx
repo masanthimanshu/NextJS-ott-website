@@ -103,21 +103,7 @@ function Category({ data }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { name: "home" } },
-      { params: { name: "kids" } },
-      { params: { name: "news" } },
-      { params: { name: "music" } },
-      { params: { name: "shows" } },
-      { params: { name: "movies" } },
-    ],
-    fallback: true,
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { name } = context.params;
 
   const res = await fetch(`${process.env.API_URL}/category/${name}`);

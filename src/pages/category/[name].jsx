@@ -103,24 +103,17 @@ function Category({ data }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { name: "home" } },
-      { params: { name: "kids" } },
-      { params: { name: "news" } },
-      { params: { name: "music" } },
-      { params: { name: "shows" } },
-      { params: { name: "movies" } },
-    ],
-    fallback: true,
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { name } = context.params;
+  const pages = ["home", "news", "kids", "shows", "music", "movies"];
 
-  const res = await fetch(`${process.env.API_URL}/category/${name}`);
+  if (!pages.includes(name)) {
+    return { notFound: true };
+  }
+
+  const res = await fetch(
+    `https://ott-backend-t3a7.onrender.com/category/${name}`
+  );
   const data = await res.json();
 
   return { props: { data } };

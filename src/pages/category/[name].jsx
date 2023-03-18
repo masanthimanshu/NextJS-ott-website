@@ -119,11 +119,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { name } = context.params;
-  const pages = ["home", "news", "kids", "shows", "music", "movies"];
-
-  if (!pages.includes(name)) {
-    return { notFound: true };
-  }
 
   const res = await fetch(`${process.env.API_URL}/category/${name}`);
   const data = await res.json();

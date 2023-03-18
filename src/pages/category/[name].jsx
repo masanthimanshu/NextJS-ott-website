@@ -103,7 +103,21 @@ function Category({ data }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { name: "home" } },
+      { params: { name: "kids" } },
+      { params: { name: "news" } },
+      { params: { name: "music" } },
+      { params: { name: "shows" } },
+      { params: { name: "movies" } },
+    ],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
   const { name } = context.params;
   const pages = ["home", "news", "kids", "shows", "music", "movies"];
 
@@ -111,7 +125,7 @@ export async function getServerSideProps(context) {
     return { notFound: true };
   }
 
-  const res = await fetch(`https://nextjs-ott.vercel.app/api/category/${name}`);
+  const res = await fetch(`${process.env.API_URL}/category/${name}`);
   const data = await res.json();
 
   return { props: { data } };

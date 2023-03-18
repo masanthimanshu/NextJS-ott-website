@@ -27,7 +27,7 @@ function handler(req, res) {
       ],
     };
 
-    res.send(response);
+    res.status(200).send(response);
   } else {
     res.status(404).send({ message: "Category Not Found" });
   }

@@ -15,7 +15,7 @@ function handler(req, res) {
     recommended: cards,
   };
 
-  res.send(response);
+  res.status(200).send(response);
 }
 
 export default handler;

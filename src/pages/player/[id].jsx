@@ -61,7 +61,7 @@ function Player({ data }) {
 export async function getServerSideProps(context) {
   const { id } = context.params;
 
-  const res = await fetch(`${process.env.API_URL}/player/${id}`);
+  const res = await fetch(`https://nextjs-ott.vercel.app/api/player/${id}`);
   const data = await res.json();
 
   return { props: { data } };
